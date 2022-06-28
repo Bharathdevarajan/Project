@@ -2,118 +2,107 @@ Indiumite
 Learning my first program
 Today is the first day of my training
 package banking;
-
 import java.util.Scanner;
 
+
 public class Account {
-	
-	double balance;
-	
-	
-	public void credit(double amount) {
+double balance;
 		
-		balance=balance+amount;
-	}
-	
-	public void debit(double amount) {
-		balance=balance-amount;
-	}
-	public double deduct(double amount) {
 		
-			double i=amount-50000;
-			double j=(i/10000)*5;
-			System.out.println("Deducted Charges:"+j);
-			double a=getBalance()-amount-j;
-			setBalance(a);
-			return a;
+		public void credit(double amount) {
 			
+			balance=balance+amount;
+		}
 		
-	}
-
-	public double getBalance() {
-		return balance;
-	}
-
-	public void setBalance(double balance) {
-		this.balance = balance;
-	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Savings sa=new Savings();
-		Checking ch=new Checking();
-		
-			System.out.println("1.Savings Account\n2.Checking Account\n");
-			System.out.println("Enter Your Choice:");
-			Scanner sc=new Scanner(System.in); 
-			int n=sc.nextInt();
-			if(n==1) {
+		public void debit(double amount) {
+			balance=balance-amount;
+		}
+		public double deduct(double amount) {
+			
+				double i=amount-50000;
+				double j=(i/10000)*5;
+				System.out.println("Deducted Charges:"+j);
+				double a=getBalance()-amount-j;
+				setBalance(a);
+				return a;
 				
-				while(true)
-				{
-					System.out.println("1.Deposit\n2.Withdraw\n3.Check Balance\n4.Exit to main menu");
-					System.out.println("Enter your choice:");
-					int m=sc.nextInt();
-				
-					switch(m) {
-					
-					case 1:
-						System.out.println("Enter the amount to be deposited:");
-						double amount1=sc.nextDouble();
-						System.out.println("Balance:"+sa.deposit(amount1));
-						break;
-					case 2:
-						System.out.println("Enter the amount to be debited:");
-						double amount2=sc.nextDouble();
-						System.out.println("Balance:"+sa.withdraw(amount2));
-						break;
-					case 3:
-						System.out.println("Balance:"+sa.checkbalance());
-						break;
-					default:
-						System.exit(0);
-						}
-					
-				}
-				
-				
-			}
-			else if(n==2){
-				while(true)
-				{
-					System.out.println("1.Deposit\n2.Withdraw\n3.Check Balance\n4.Exit to main menu");
-					System.out.println("Enter your choice:");
-					int m=sc.nextInt();
-				
-					switch(m) {
-					
-					case 1:
-						System.out.println("Enter the amount to be deposited:");
-						double amount1=sc.nextDouble();
-						System.out.println("Balance:"+ch.deposit(amount1));
-						break;
-					case 2:
-						System.out.println("Enter the amount to be debited:");
-						double amount2=sc.nextDouble();
-						System.out.println("Balance:"+ch.withdraw(amount2));
-						break;
-					case 3:
-						System.out.println("Balance:"+ch.checkbalance());
-						break;
-					default:
-						System.exit(0);
-						}
-					
-				}
-
-				
-				
-			}
-
 			
 		}
-				
-		
 
-	
+		public double getBalance() {
+			return balance;
+		}
+
+		public void setBalance(double balance) {
+			this.balance = balance;
+		}
+		
+		public static void main(String[] args) {
+			Savings sa=new Savings();
+			Checking ch=new Checking();
+			
+				System.out.println("1.Savings Account\n2.Checking Account\n");
+				System.out.println("Enter Your Choice:");
+				Scanner sc=new Scanner(System.in); 
+				int n=sc.nextInt();
+				if(n==1) {
+					
+					while(true)
+					{
+						System.out.println("1.Deposit\n2.Withdraw\n3.Check Balance\n4.Exit to main menu");
+						System.out.println("Enter your choice:");
+						int m=sc.nextInt();
+					
+						switch(m) {
+						
+						case 1:
+							System.out.println("Enter the amount to be deposited:");
+							double amount1=sc.nextDouble();
+							System.out.println("Balance:"+sa.deposit(amount1));
+							break;
+						case 2:
+							System.out.println("Enter the amount to be debited:");
+							double amount2=sc.nextDouble();
+							System.out.println("Balance:"+sa.withdraw(amount2));
+							break;
+						case 3:
+							System.out.println("Balance:"+sa.checkbalance());
+							break;
+						default:
+							System.exit(0);
+							}
+						
+					}
+					
+					
+				}
+				else if(n==2){
+					while(true)
+					{
+						System.out.println("1.Deposit\n2.Withdraw\n3.Check Balance\n4.Exit to main menu");
+						System.out.println("Enter your choice:");
+						int m=sc.nextInt();
+					
+						switch(m) {
+						
+						case 1:
+							System.out.println("Enter the amount to be deposited:");
+							double amount1=sc.nextDouble();
+							System.out.println("Balance:"+ch.deposit(amount1));
+							break;
+						case 2:
+							System.out.println("Enter the amount to be debited:");
+							double amount2=sc.nextDouble();
+							System.out.println("Balance:"+ch.withdraw(amount2));
+							break;
+						case 3:
+							System.out.println("Balance:"+ch.checkbalance());
+							break;
+						default:
+							System.exit(0);
+							}
+						
+					}
+				}
+		}
 }
