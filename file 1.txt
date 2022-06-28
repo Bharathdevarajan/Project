@@ -1,28 +1,20 @@
 package banking;
 
-public class Checking extends Account {
- double deposit(double amount) {
-		
-	    credit(amount);
-		double a=getBalance();
-		setBalance(a);
-		return getBalance();
-	}
-	double withdraw(double amount) {
-		
-		
-		if(amount>=50000) {
-			
-			deduct(amount);
-		}
-		else {
-			debit(amount);
-			
-		}
-		double a=getBalance();
+public class Savings  extends Account{
+	double deposit(double amount) {
+		credit(amount);
+		double a=getBalance()+(getBalance()*0.07);
 		setBalance(a);
 		return a;
 		
+	}
+	
+	double withdraw(double amount) {
+		
+		debit(amount);
+		double a=getBalance();
+		setBalance(a);
+		return a;
 		
 	}
 	
@@ -31,4 +23,8 @@ public class Checking extends Account {
 		return getBalance();
 	}
 	
+
+	
+	
+
 }
