@@ -1,23 +1,166 @@
-lic class Shop
-{
-public static void main (String[] args)
-{
-Item item;
-String itemName;
-double itemPrice;
-int quantity;
-Scanner scan = new Scanner(System.in);
-String keepShopping = "y";
-do
- 
-{
-System.out.print ("Enter the name of the item: ");
-itemName = scan.nextLine();
-System.out.print ("Enter the unit price: ");
-itemPrice = scan.nextDouble();
-System.out.print ("Enter the quantity: ");
-quantity = scan.nextInt(); // *** create a new item and add it to the cart
-// *** print the contents of the cart object using println System.out.print ("Continue shopping (y/n)? ");
-keepShopping = scan.nextLine(); } while (keepShopping.equals("y"));
-}
+package basics;
+
+import java.util.Scanner;
+
+public class Hotel{
+	public static void main(String[] args) {
+		String a =null;
+		int b,c,g;
+		double Subtotal = 0,r = 0,Subtotal1=0,x=0;
+		int r1,r2,r3,r4,r5;
+		r1=r2=r3=r4=r5=b=c=g=0;
+		Scanner p= new Scanner(System.in);
+		while(r<=20) {
+			System.out.println("Enter your name:");
+		a=p.next();
+		System.out.println("Enter the number of days you need a room:");
+		b=p.nextInt();
+		do{
+			System.out.println("Enter the type of room you need:");
+		c=p.nextInt();
+	
+		switch(c) {
+		case 1:{
+			if(r1<4) {if(b>15) {
+				x=600*0.2;
+				Subtotal=(600-x)*b;g=0;
+			}
+			else if(b>10) {
+				x=(600*0.15);
+				Subtotal=(600-x)*b;g=0;
+			}
+			else if(b>5) {
+				x=(600*0.1);
+				Subtotal=(600-x)*b;g=0;
+			}
+			else {
+				x=0;
+				Subtotal=600*b;g=0;
+			}
+			++r1;	break;	
+			}
+			else {
+				System.out.println("This type of room is full please select another room");
+				g=1;break;
+			}
+			
+		}
+		
+		case 2:{
+			if(r2<4) {if(b>15) {
+				x=(700*0.2);
+				Subtotal=(700-x)*b;g=0;
+			}
+			else if(b>10) {
+				x=(700*0.15);
+				Subtotal=(700-x)*b;g=0;
+			}
+			else if(b>5) {
+				x=(700*0.1);
+				Subtotal=(700-x)*b;g=0;
+			}
+			else {x=0;
+				Subtotal=700*b;g=0;
+			}
+			++r2;break;	
+		
+			}
+			else {
+				System.out.println("This type of room is full please select another room");
+				g=1;break;
+			}
+			
+		}
+		case 3:{
+			if(r3<4) {if(b>15) {
+				x=(850*0.2);
+				Subtotal=(850-x)*b;g=0;
+			}
+			else if(b>10) {
+				x=(850*0.15);
+				Subtotal=(850-x)*b;g=0;
+			}
+			else if(b>5) {
+				x=(850*0.1);
+				Subtotal=(850-x)*b;g=0;
+			}
+			else {x=0;
+				Subtotal=850*b;
+				g=0;
+			}
+			++r3;	break;
+					
+			}
+			else {
+				System.out.println("This type of room is full please select another room");
+				g=1;break;
+			}
+			
+		}
+		case 4:{
+			if(r4<4) {if(b>15) {
+				x=(1000*0.2);
+				Subtotal=(1000-x)*b;g=0;
+			}
+			else if(b>10) {
+				x=(1000*0.2);
+				Subtotal=(1000-x)*b;g=0;
+			}
+			else if(b>5) {
+				x=(1000*0.1);
+				Subtotal=(1000-x)*b;g=0;
+			}
+			else {x=0;
+				Subtotal=1000*b;g=0;
+			}
+			++r4;	break;	
+			}
+			else {
+				System.out.println("This type of room is full please select another room");
+				g=1;break;
+			}
+			
+		}
+		case 5:{if(r5<4)
+			 {if(b>15) {
+				 x=(1200*0.2);
+				Subtotal=(1200-x)*b;g=0;
+			}
+			else if(b>10) {
+				x=(1200*0.15);
+				Subtotal=(1200-x)*b;g=0;
+			}
+			else if(b>5) {
+				x=(1200*0.1);
+				Subtotal=(1200-x)*b;g=0;
+			}
+			else {x=0;
+				Subtotal=1200*b;
+				g=0;
+			}
+			++r5;	break;	
+			}
+			else {
+				System.out.println("This type of room is full please select another room");
+				g=1;break;
+			}
+			
+		}
+		}
+		}while(g==1);
+		r=r1+r2+r3+r4+r5;
+		System.out.println("Coustmer name is "+a);
+		System.out.println("No of days rooms is used "+b);
+		System.out.println("Type of room choosed is "+c);
+		System.out.println("Total number of rooms currently in use "+r);
+		System.out.println("your discount is "+x);
+		System.out.println("your Subtotal is "+Subtotal);
+		Subtotal1=Subtotal1+Subtotal;
+		System.out.println("Total rate"+Subtotal1);
+		
+		}
+		
+		
+		}
+		
 }
